@@ -38,6 +38,11 @@ divisor = ler_inteiro(f"Divisor para {dividendo} / ")
 # dividendo = int(dividendo)
 # divisor = int(divisor)
 
+# teste por 0
+if divisor == 0:
+    print("Erro: não existe divisão por zero.")
+    exit()
+
 print(f"Cálculo: {dividendo} / {divisor} = ?");
 
 # tranformando em lista
