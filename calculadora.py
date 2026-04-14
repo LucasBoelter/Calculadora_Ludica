@@ -13,13 +13,19 @@ def desenhar_etapa(numero, divisor, inteiro, resto, etapa=""):
     grupos = " ".join([grupo] * inteiro)
     sobras = " ".join([icone] * resto)
 
-    largura_rotulo = 8
+    largura = 80
+    rotulo = 8
 
-    print("=" * 80)
-    print(f"{'Número':<{largura_rotulo}}: {numero}")
-    print(f"{'Itens':<{largura_rotulo}}: {itens}")
-    print(f"{'Grupos':<{largura_rotulo}}: {grupos if grupos else '(nenhum)'}")
-    print(f"{'Resto':<{largura_rotulo}}: {sobras if sobras else '(vazio)'}")
+    print("=" * largura)
+    if etapa:
+        print(f"{etapa:^{largura}}")
+        print("-" * largura)
+
+    print(f"{'Número':<{rotulo}}: {numero}")
+    print(f"{'Itens':<{rotulo}}: {itens}")
+    print(f"{'Grupos':<{rotulo}}: {grupos if grupos else '(nenhum)'}")
+    print(f"{'Resto':<{rotulo}}: {sobras if sobras else '(vazio)'}")
+    print("=" * largura)
 
 
 
@@ -92,5 +98,4 @@ if resto_proximo > 0:
         if resto_proximo == 0:
             break
 
-print("="*100)
 print("Resultado final:",resultado)
