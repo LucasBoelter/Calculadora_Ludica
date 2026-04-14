@@ -13,28 +13,28 @@ def desenhar_etapa(numero, divisor, inteiro, resto, etapa=""):
     grupos = " ".join([grupo] * inteiro)
     sobras = " ".join([icone] * resto)
 
-    print("=" * 100)
-    if etapa:
-        print(etapa)
-    print(f"Número : {numero}")
-    print(f"Itens  : {itens}")
-    print(f"Grupos : {grupos if grupos else '(nenhum grupo completo)'}")
-    print(f"Resto  : {sobras if sobras else '(sem resto)'}")
+    largura_rotulo = 8
+
+    print("=" * 80)
+    print(f"{'Número':<{largura_rotulo}}: {numero}")
+    print(f"{'Itens':<{largura_rotulo}}: {itens}")
+    print(f"{'Grupos':<{largura_rotulo}}: {grupos if grupos else '(nenhum)'}")
+    print(f"{'Resto':<{largura_rotulo}}: {sobras if sobras else '(vazio)'}")
 
 
 
 # Testes numeros
-# import random;
-# dividendo = random.randint(10,999);
-# divisor = random.randint(0,99);
+import random;
+dividendo = random.randint(10,99);
+divisor = random.randint(0,10);
 
 # Apresentação
 titulo = "Calculadora ludica"
 mostrar_titulo(titulo)
 
 # Coleta de dados
-dividendo = ler_inteiro("Dividendo: ")
-divisor = ler_inteiro(f"Divisor para {dividendo} / ")
+# dividendo = ler_inteiro("Dividendo: ")
+# divisor = ler_inteiro(f"Divisor para {dividendo} / ")
 
 
 # teste por 0
