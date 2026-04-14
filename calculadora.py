@@ -13,6 +13,10 @@ def desenhar_etapa(numero, divisor, inteiro, resto, etapa=""):
     print(f"Grupos : {grupos if grupos else '(nenhum grupo completo)'}")
     print(f"Resto  : {sobras if sobras else '(sem resto)'}")
 
+
+def ler_inteiro(mensagem):
+    return int(input(mensagem))
+
 # Testes numeros
 # import random;
 # dividendo = random.randint(900,20000);
@@ -26,11 +30,13 @@ print("| " + titulo + " |")
 print("+" + "-" * (len(titulo) + 2) + "+")
 
 # Coleta de dados
-dividendo = input("Dividendo: ")
-divisor = input("Divisor: " + dividendo + " / ")
+dividendo = ler_inteiro("Dividendo: ")
+divisor = ler_inteiro(f"Divisor para {dividendo} / ")
+# dividendo = input("Dividendo: ")
+# divisor = input("Divisor: " + dividendo + " / ")
 
-dividendo = int(dividendo)
-divisor = int(divisor)
+# dividendo = int(dividendo)
+# divisor = int(divisor)
 
 print(f"Cálculo: {dividendo} / {divisor} = ?");
 
