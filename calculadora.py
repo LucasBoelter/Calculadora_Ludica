@@ -1,3 +1,11 @@
+def mostrar_titulo(titulo):
+    print("+" + "-" * (len(titulo) + 2) + "+")
+    print("| " + titulo + " |")
+    print("+" + "-" * (len(titulo) + 2) + "+")
+
+def ler_inteiro(mensagem):
+    return int(input(mensagem))
+
 def desenhar_etapa(numero, divisor, inteiro, resto, etapa=""):
     icone = "🍬"
     itens = " ".join([icone] * numero)
@@ -5,7 +13,7 @@ def desenhar_etapa(numero, divisor, inteiro, resto, etapa=""):
     grupos = " ".join([grupo] * inteiro)
     sobras = " ".join([icone] * resto)
 
-    print("=" * 60)
+    print("=" * 100)
     if etapa:
         print(etapa)
     print(f"Número : {numero}")
@@ -14,29 +22,20 @@ def desenhar_etapa(numero, divisor, inteiro, resto, etapa=""):
     print(f"Resto  : {sobras if sobras else '(sem resto)'}")
 
 
-def ler_inteiro(mensagem):
-    return int(input(mensagem))
 
 # Testes numeros
 # import random;
-# dividendo = random.randint(900,20000);
-# dividendo = 148923 
-# dividendo = 9426 
+# dividendo = random.randint(10,999);
+# divisor = random.randint(0,99);
 
 # Apresentação
 titulo = "Calculadora ludica"
-print("+" + "-" * (len(titulo) + 2) + "+")
-print("| " + titulo + " |")
-print("+" + "-" * (len(titulo) + 2) + "+")
+mostrar_titulo(titulo)
 
 # Coleta de dados
 dividendo = ler_inteiro("Dividendo: ")
 divisor = ler_inteiro(f"Divisor para {dividendo} / ")
-# dividendo = input("Dividendo: ")
-# divisor = input("Divisor: " + dividendo + " / ")
 
-# dividendo = int(dividendo)
-# divisor = int(divisor)
 
 # teste por 0
 if divisor == 0:
@@ -73,9 +72,7 @@ for i in lista_caracteres:
 
 # rearranjando numeros
 resultado = "".join(lista_final)
-# resultado = ""
-# for i in lista_final:
-#     resultado = resultado + str(i);
+
 
 casas_decimais = 2
 
@@ -94,20 +91,6 @@ if resto_proximo > 0:
 
         if resto_proximo == 0:
             break
-
-# if resto_proximo > 0:
-#     resultado += ","
-    
-#     for _ in range(casas_decimais):
-#         numero_da_lista = resto_proximo * 10
-#         inteiro = numero_da_lista // divisor
-#         resto = numero_da_lista % divisor
-
-#         resultado += str(inteiro)
-#         resto_proximo = resto
-
-#         if resto_proximo == 0:
-#             break
 
 print("="*100)
 print("Resultado final:",resultado)
