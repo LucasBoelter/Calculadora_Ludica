@@ -36,29 +36,12 @@ for i in lista_caracteres:
     resto = numero_da_lista%divisor
     
     # desenhando
-    # desenho_solto = " * "*numero_da_lista
-    # grupo = "["+" * "*divisor+"]"
-    # desenho_agrupado = grupo*inteiro + " *"*resto
-
-    # info_com_resto = f"{int(resto_proximo/10)} e {numero_da_lista-resto_proximo} = {numero_da_lista}"
-    # info_sem_resto = str(numero_da_lista)
-
-    print("="*100)
-    # if resto_proximo > 0:
-    #     espaços = len(info_com_resto)
-    #     print(f"{info_com_resto} {desenho_solto}")
-    #     print(f"{" "*espaços} {desenho_agrupado}")
-    # else:
-    #     espaços = len(info_sem_resto)
-    #     print(f"{info_sem_resto} {desenho_solto}")
-    #     print(f"{" "*espaços} {desenho_agrupado}")
-    #     # print(info_sem_resto)
-
     desenho_solto = " ".join(["*"] * numero_da_lista)
     grupo = "[" + " ".join(["*"] * divisor) + "]"
     grupos = " ".join([grupo] * inteiro)
     sobras = " ".join(["*"] * resto)
 
+    print("="*100)
     print(f"Itens : {desenho_solto}")
     print(f"Grupos: {grupos}")
     print(f"Resto : {sobras}")
@@ -69,8 +52,6 @@ for i in lista_caracteres:
     
     # atualiza o resto
     resto_proximo = resto
-    # if resto_proximo > 0:
-    #     print("Sobrou:", resto_proximo)
 
 # rearranjando numeros
 resultado = ""
