@@ -77,21 +77,37 @@ resultado = "".join(lista_final)
 # for i in lista_final:
 #     resultado = resultado + str(i);
 
-casas_decimais = 5
+casas_decimais = 2
 
 if resto_proximo > 0:
     resultado += ","
-    
-    for _ in range(casas_decimais):
+
+    for casa in range(casas_decimais):
         numero_da_lista = resto_proximo * 10
         inteiro = numero_da_lista // divisor
         resto = numero_da_lista % divisor
+
+        desenhar_etapa(numero_da_lista, divisor, inteiro, resto, etapa=f"Casa decimal {casa + 1}")
 
         resultado += str(inteiro)
         resto_proximo = resto
 
         if resto_proximo == 0:
             break
+
+# if resto_proximo > 0:
+#     resultado += ","
+    
+#     for _ in range(casas_decimais):
+#         numero_da_lista = resto_proximo * 10
+#         inteiro = numero_da_lista // divisor
+#         resto = numero_da_lista % divisor
+
+#         resultado += str(inteiro)
+#         resto_proximo = resto
+
+#         if resto_proximo == 0:
+#             break
 
 print("="*100)
 print("Resultado final:",resultado)
