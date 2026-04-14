@@ -12,22 +12,23 @@ def desenhar_etapa(numero, divisor, inteiro, resto):
     print(f"Resto : {sobras}")
 
 # Testes numeros
-import random;
+# import random;
 # dividendo = random.randint(900,20000);
 # dividendo = 148923 
-dividendo = 9426 
+# dividendo = 9426 
 
+# Apresentação
 titulo = "Calculadora ludica"
 print("+" + "-" * (len(titulo) + 2) + "+")
 print("| " + titulo + " |")
 print("+" + "-" * (len(titulo) + 2) + "+")
 
+# Coleta de dados
 dividendo = input("Dividendo: ")
 divisor = input("Divisor: " + dividendo + " / ")
 
 dividendo = int(dividendo)
 divisor = int(divisor)
-
 
 print(f"Cálculo: {dividendo} / {divisor} = ?");
 
@@ -48,17 +49,7 @@ for i in lista_caracteres:
     inteiro = numero_da_lista//divisor
     resto = numero_da_lista%divisor
     
-    # desenhando
     desenhar_etapa(numero_da_lista, divisor, inteiro, resto)
-    # desenho_solto = " ".join(["*"] * numero_da_lista)
-    # grupo = "[" + " ".join(["*"] * divisor) + "]"
-    # grupos = " ".join([grupo] * inteiro)
-    # sobras = " ".join(["*"] * resto)
-
-    # print("="*100)
-    # print(f"Itens : {desenho_solto}")
-    # print(f"Grupos: {grupos}")
-    # print(f"Resto : {sobras}")
 
     # adiciona na lista
     if inteiro > 0:
