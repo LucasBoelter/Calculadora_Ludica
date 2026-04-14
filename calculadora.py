@@ -1,3 +1,15 @@
+def desenhar_etapa(numero, divisor, inteiro, resto):
+    itens = " ".join(["*"] * numero)
+    grupo = "[" + " ".join(["*"] * divisor) + "]"
+    grupos = " ".join([grupo] * inteiro)
+    sobras = " ".join(["*"] * resto)
+
+    print("=" * 100)
+    print(f"Número: {numero}")
+    print(f"Itens : {itens}")
+    print(f"Grupos: {grupos}")
+    print(f"Resto : {sobras}")
+
 # Testes numeros
 import random;
 # dividendo = random.randint(900,20000);
@@ -36,15 +48,16 @@ for i in lista_caracteres:
     resto = numero_da_lista%divisor
     
     # desenhando
-    desenho_solto = " ".join(["*"] * numero_da_lista)
-    grupo = "[" + " ".join(["*"] * divisor) + "]"
-    grupos = " ".join([grupo] * inteiro)
-    sobras = " ".join(["*"] * resto)
+    desenhar_etapa(numero_da_lista, divisor, inteiro, resto)
+    # desenho_solto = " ".join(["*"] * numero_da_lista)
+    # grupo = "[" + " ".join(["*"] * divisor) + "]"
+    # grupos = " ".join([grupo] * inteiro)
+    # sobras = " ".join(["*"] * resto)
 
-    print("="*100)
-    print(f"Itens : {desenho_solto}")
-    print(f"Grupos: {grupos}")
-    print(f"Resto : {sobras}")
+    # print("="*100)
+    # print(f"Itens : {desenho_solto}")
+    # print(f"Grupos: {grupos}")
+    # print(f"Resto : {sobras}")
 
     # adiciona na lista
     if inteiro > 0:
