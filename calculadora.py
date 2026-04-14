@@ -1,15 +1,17 @@
-def desenhar_etapa(numero, divisor, inteiro, resto):
+def desenhar_etapa(numero, divisor, inteiro, resto, etapa=""):
     icone = "🍬"
-    itens = (icone + " ") * numero
-    grupo = "[" + (icone + " ") * divisor + "]"
+    itens = " ".join([icone] * numero)
+    grupo = "[" + " ".join([icone] * divisor) + "]"
     grupos = " ".join([grupo] * inteiro)
-    sobras = " ".join((icone + " ") * resto)
+    sobras = " ".join([icone] * resto)
 
-    print("=" * 100)
-    print(f"Número: {numero}")
-    print(f"Itens : {itens}")
-    print(f"Grupos: {grupos}")
-    print(f"Resto : {sobras}")
+    print("=" * 60)
+    if etapa:
+        print(etapa)
+    print(f"Número : {numero}")
+    print(f"Itens  : {itens}")
+    print(f"Grupos : {grupos if grupos else '(nenhum grupo completo)'}")
+    print(f"Resto  : {sobras if sobras else '(sem resto)'}")
 
 # Testes numeros
 # import random;
