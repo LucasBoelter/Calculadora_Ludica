@@ -1,8 +1,9 @@
 def desenhar_etapa(numero, divisor, inteiro, resto):
-    itens = " ".join(["*"] * numero)
-    grupo = "[" + " ".join(["*"] * divisor) + "]"
+    icone = "🍬"
+    itens = (icone + " ") * numero
+    grupo = "[" + (icone + " ") * divisor + "]"
     grupos = " ".join([grupo] * inteiro)
-    sobras = " ".join(["*"] * resto)
+    sobras = " ".join((icone + " ") * resto)
 
     print("=" * 100)
     print(f"Número: {numero}")
