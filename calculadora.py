@@ -72,9 +72,10 @@ for i in lista_caracteres:
     resto_proximo = resto
 
 # rearranjando numeros
-resultado = ""
-for i in lista_final:
-    resultado = resultado + str(i);
+resultado = "".join(lista_final)
+# resultado = ""
+# for i in lista_final:
+#     resultado = resultado + str(i);
 
 casas_decimais = 5
 
