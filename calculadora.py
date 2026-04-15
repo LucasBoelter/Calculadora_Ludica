@@ -1,3 +1,10 @@
+LARGURA_CAIXA = 80
+LARGURA_CONTEUDO_GRUPOS = 45
+LARGURA_ROTULO = 8
+MAX_ITENS = 20
+MAX_SOBRAS = 12
+ICONE = "🍬"
+
 def mostrar_titulo(titulo):
     print("+" + "-" * (len(titulo) + 2) + "+")
     print("| " + titulo + " |")
@@ -36,26 +43,20 @@ def mostrar_grupos(inteiro, divisor, icone="🍬", largura_max=60):
     return resultado if resultado else "(nenhum)"
 
 def desenhar_etapa(numero, divisor, inteiro, resto, etapa=""):
-    icone = "🍬"
+    itens = mostrar_icones(numero, ICONE, max_exibir=MAX_ITENS)
+    grupos = mostrar_grupos(inteiro, divisor, ICONE, largura_max=LARGURA_CONTEUDO_GRUPOS)
+    sobras = mostrar_icones(resto, ICONE, max_exibir=MAX_SOBRAS)
 
-    largura = 80
-    rotulo = 8
-    largura_conteudo = 46
-
-    itens = mostrar_icones(numero, icone, max_exibir=20)
-    grupos = mostrar_grupos(inteiro, divisor, icone, largura_max=largura_conteudo)
-    sobras = mostrar_icones(resto, icone, max_exibir=12)
-
-    print("=" * largura)
+    print("=" * LARGURA_CAIXA)
     if etapa:
-        print(f"{etapa:^{largura}}")
-        print("-" * largura)
+        print(f"{etapa:^{LARGURA_CAIXA}}")
+        print("-" * LARGURA_CAIXA)
 
-    print(f"{'Número':<{rotulo}}: {numero}")
-    print(f"{'Itens':<{rotulo}}: {itens}")
-    print(f"{'Grupos':<{rotulo}}: {grupos}")
-    print(f"{'Resto':<{rotulo}}: {sobras if sobras else '(vazio)'}")
-    print("=" * largura)
+    print(f"{'Número':<{LARGURA_ROTULO}}: {numero}")
+    print(f"{'Itens':<{LARGURA_ROTULO}}: {itens}")
+    print(f"{'Grupos':<{LARGURA_ROTULO}}: {grupos}")
+    print(f"{'Resto':<{LARGURA_ROTULO}}: {sobras if sobras else '(vazio)'}")
+    print("=" * LARGURA_CAIXA)
 
 
 
