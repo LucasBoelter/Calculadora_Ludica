@@ -6,15 +6,45 @@ def mostrar_titulo(titulo):
 def ler_inteiro(mensagem):
     return int(input(mensagem))
 
+def mostrar_icones(qtd, icone="🍬", max_exibir=20):
+    if qtd <= max_exibir:
+        return " ".join([icone] * qtd)
+    return " ".join([icone] * max_exibir) + f" ... (+{qtd - max_exibir})"
+
+def mostrar_grupos(inteiro, divisor, icone="🍬", largura_max=60):
+    grupo = "[" + " ".join([icone] * divisor) + "]"
+    grupos = []
+    largura_atual = 0
+    grupos_exibidos = 0
+
+    for _ in range(inteiro):
+        trecho = grupo if grupos_exibidos == 0 else " " + grupo
+
+        if largura_atual + len(trecho) > largura_max:
+            break
+
+        grupos.append(trecho)
+        largura_atual += len(trecho)
+        grupos_exibidos += 1
+
+    resultado = "".join(grupos)
+
+    if grupos_exibidos < inteiro:
+        restante = inteiro - grupos_exibidos
+        resultado += f" ... (+{restante} grupos)"
+
+    return resultado if resultado else "(nenhum)"
+
 def desenhar_etapa(numero, divisor, inteiro, resto, etapa=""):
     icone = "🍬"
-    itens = " ".join([icone] * numero)
-    grupo = "[" + " ".join([icone] * divisor) + "]"
-    grupos = " ".join([grupo] * inteiro)
-    sobras = " ".join([icone] * resto)
 
     largura = 80
     rotulo = 8
+    largura_conteudo = 46
+
+    itens = mostrar_icones(numero, icone, max_exibir=20)
+    grupos = mostrar_grupos(inteiro, divisor, icone, largura_max=largura_conteudo)
+    sobras = mostrar_icones(resto, icone, max_exibir=12)
 
     print("=" * largura)
     if etapa:
@@ -23,7 +53,7 @@ def desenhar_etapa(numero, divisor, inteiro, resto, etapa=""):
 
     print(f"{'Número':<{rotulo}}: {numero}")
     print(f"{'Itens':<{rotulo}}: {itens}")
-    print(f"{'Grupos':<{rotulo}}: {grupos if grupos else '(nenhum)'}")
+    print(f"{'Grupos':<{rotulo}}: {grupos}")
     print(f"{'Resto':<{rotulo}}: {sobras if sobras else '(vazio)'}")
     print("=" * largura)
 
