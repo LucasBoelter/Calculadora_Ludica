@@ -18,6 +18,11 @@ def mostrar_icones(qtd, icone="🍬", max_exibir=20):
         return " ".join([icone] * qtd)
     return " ".join([icone] * max_exibir) + f" ... (+{qtd - max_exibir})"
 
+def calcular_etapa(numero, divisor):
+    inteiro = numero // divisor
+    resto = numero % divisor
+    return inteiro, resto
+
 def mostrar_grupos(inteiro, divisor, icone="🍬", largura_max=60):
     grupo = "[" + " ".join([icone] * divisor) + "]"
     grupos = []
@@ -95,8 +100,7 @@ for i in lista_caracteres:
     numero_da_lista = numero_da_lista + resto_proximo
 
     # calculando inteiro e resto
-    inteiro = numero_da_lista//divisor
-    resto = numero_da_lista%divisor
+    inteiro, resto = calcular_etapa(numero_da_lista, divisor)
     
     desenhar_etapa(numero_da_lista, divisor, inteiro, resto)
 
@@ -118,8 +122,7 @@ if resto_proximo > 0:
 
     for casa in range(casas_decimais):
         numero_da_lista = resto_proximo * 10
-        inteiro = numero_da_lista // divisor
-        resto = numero_da_lista % divisor
+        inteiro, resto = calcular_etapa(numero_da_lista, divisor)
 
         desenhar_etapa(numero_da_lista, divisor, inteiro, resto, etapa=f"Casa decimal {casa + 1}")
 
